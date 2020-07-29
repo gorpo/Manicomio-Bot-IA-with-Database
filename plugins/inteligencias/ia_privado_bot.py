@@ -10,27 +10,13 @@
 #     |   Telegram: @GorpoOrko Mail:gorpoorko@protonmail.com      |
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
-import html
-import re
+
 import random
-import amanobot
-import aiohttp
-from amanobot.exception import TelegramError
-import time
-from config import bot, sudoers, logs, bot_username
-from utils import send_to_dogbin, send_to_hastebin
-import subprocess
-import time
 import speech_recognition as sr
 from pydub import AudioSegment
-import os
-import dropbox
-import re
-import wikipedia
+
 import sqlite3
-from config import bot, sudoers, logs, bot_username,token_dropbox
-from datetime import datetime
-from plugins.admins import is_admin
+from config import bot, sudoers, logs, bot_username
 
 async def ia_privado_bot(msg):
     chat_id = msg['chat']['id']

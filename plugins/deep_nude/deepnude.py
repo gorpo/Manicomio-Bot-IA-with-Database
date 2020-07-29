@@ -14,8 +14,6 @@ import sys
 import subprocess
 from plugins.deep_nude.run import process
 
-import argparse
-
 
 def main(inputpath,outputpath):
 	if isinstance(inputpath, list):
@@ -38,6 +36,6 @@ def deep_nude_process(item):
     return watermark
 
 if __name__ == '__main__':
-	inputpath = 'plugins/deep_nude/file.jpg'
-	outputpath = 'plugins/deep_nude/renderizada.jpg'
+	inputpath = 'arquivos/file.jpg'
+	outputpath = 'arquivos/renderizada.jpg'
 	main(inputpath,outputpath)

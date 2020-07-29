@@ -40,7 +40,9 @@ async def inteligencia(msg):
         adm = await is_admin(msg['chat']['id'], msg['from']['id'], id_usuario)
     except Exception as e:
         pass
-    try:
+    try:#ativa a inteligencia no privado do bot
+        if msg['chat']['type'] == 'private':
+            privado_bot = await ia_privado_bot()
         if msg['chat']['type'] == 'supergroup':
             try:
                 grupo = f"https://t.me/{msg['chat']['username']}"

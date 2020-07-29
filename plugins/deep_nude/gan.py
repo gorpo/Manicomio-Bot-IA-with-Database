@@ -71,7 +71,7 @@ class DeepModel(torch.nn.Module):
 
 		self.opt = opt
 
-		self.gpu_ids = [] #FIX CPU
+		self.gpu_ids = [] #FIX CPU por 0 para usar a GPU
 
 		self.netG = self.__define_G(opt.input_nc, opt.output_nc, opt.ngf, opt.netG, 
 									  opt.n_downsample_global, opt.n_blocks_global, opt.n_local_enhancers, 

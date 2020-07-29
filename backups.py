@@ -18,10 +18,9 @@ import schedule
 from datetime import datetime
 from utils import backup_sources
 from multiprocessing import Process
-from config import backups_chat, backup_hours, na_bot,token_dropbox
+from config import backups_chat, backup_hours, na_bot,keys,logs
 import dropbox
 import time
-from config import bot, version, bot_username, git_repo,logs,sudoers
 import os
 from datetime import datetime
 import sqlite3
@@ -29,9 +28,10 @@ import sqlite3
 
 #função que faz os backups com base em hora
 def backup_func():
+    token_dropbox = keys['token_dropbox']
     cstrftime = datetime.now().strftime('%d/%m/%Y - %H:%M:%S')
     file = backup_sources('Backup_automatico_bot')
-    targetfile = f"/GDRIVE_TCXSPROJECT/MARCINHO_BOT/{file}"
+    targetfile = f"/Manicomio_bot/{file}"
     d = dropbox.Dropbox(token_dropbox)
     with open(file, "rb") as f:
         meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
@@ -43,8 +43,6 @@ def backup_func():
     file1 = backup_sources('Backup_bot')
     na_bot.sendDocument(logs, open(file1, 'rb'), caption="📅 " + cstrftime)
     os.remove(file1)
-
-
     #sistema de verificaçao automatica para banimento no grupo
     try:
         conexao_sqlite = sqlite3.connect('bot_database.db')

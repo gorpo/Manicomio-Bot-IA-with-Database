@@ -6,9 +6,9 @@
 [![Build](https://img.shields.io/badge/arquiterura-64bits-blue.svg)]()
 <h2 align="center">TCXS Project | Manicomio Telegram Heroku Bot</h2>
 <img src="https://raw.githubusercontent.com/gorpo/Bases-python/master/images/banner_mani_telegram.jpg" width="100%"></img><br>
-Bot desenvolvido para monitorar e auxiliar na TCXS Project recebendo doadores e os cadastrando automaticamente em um banco de dados, no qual após determinada data os usuários são banidos, a data de permanencia padrão é de 35 dias. 
-Confira os Plugins e Comandos da Inteligencia Artificial para compreender tudo que este bot pode fazer.
-ATENÇÃO: Alguns comandos listados sem os caracteres / ! @ # $ % devem ser escritos em minusculo e sem acentos conforme explicação de cada comando logo abaixo.
+Bot desenvolvido para monitorar e auxiliar nos grupos recebendo participantes e os cadastrando automaticamente em um banco de dados, no qual após determinada data os usuários são banidos, a data de permanencia padrão é de 35 dias. 
+Confira os Plugins e Comandos da Inteligencia Artificial para compreender tudo que este bot pode fazer.<br>
+ATENÇÃO: Alguns comandos listados devem ser escritos em minusculo e sem acentos conforme explicação de cada comando logo abaixo.
 
 <h2>Instruções:</h2>
 1. Edite no arquivo config se quer rodar o bot local ou no heroku, comente e descomente as linhas.<br>
@@ -18,7 +18,7 @@ ATENÇÃO: Alguns comandos listados sem os caracteres / ! @ # $ % devem ser escr
 5. Insira este bot em um canal e pegue o id do canal, ele servirá para os logs.<br>
 6. Pegue sua id ela servirá para você ser adm master.<br>
 7. Instale os requirements.txt para ter todas bibliotecas em ordem, caso falte alguma veja o arquivo de log's e instale manualmente.<br>
- 
+8. Para aumentar a memória virtual quando da erro de memória no torch no windows ir em: computador > propriedades> configurações avançadas so sistema > avançado > desempenho > configurações > avançado > memoria virtual e definir como 16.000 e 50.000. 
 <p>Para rodar arquivos no Heroku é necessário criar um arquivo chamado "Procfile" e nele inserir o tipo de comando que será enviado para o dino do heroku<code>bot: python3 bot.py</code> Crie também um arquivo chamado runtime.txt e nele especifique sua versão do python a ser usada, tenha este arquivo na raiz do seu projeto
 <code>python-3.7.7</code>, esta source ja conta com estes arquivos.</p>
 <h2>Comandos para Desenvolvedor ou quem Hospeda o Bot:</h2>

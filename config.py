@@ -19,13 +19,12 @@ import os
 
 #LOCAL CONFIG rodar em local host use as linhas abaixo--->
 token =  "1096480409:AAE6sg6eJZtH5Z_TEIzgq10SQtCvGf4KYSc" #"1186597860:AAHNqYa3lBlSasF1XdmuzIURmukStvbvAoc"#1186597860:AAHNqYa3lBlSasF1XdmuzIURmukStvbvAoc"
-token_dropbox = 'qkZ0vNG8-yAAAAAAAAAb6Fezog5XaQPwjRmoFEc-Wv37XTch4Whd8BjedzbJLwig'
+
+
 
 
 #permissoes
-logs = 522510051    #-1001215401730
-sudoers = [522510051,]
-administradores = [522510051,]
+
 
 
 
@@ -33,7 +32,6 @@ administradores = [522510051,]
 #token = os.environ['TELEGRAM_TOKEN']
 #logs = os.environ['LOGS']
 #sudoers = os.environ['SUDOERS']
-
 
 #----------------------------------------------------
 loop = asyncio.get_event_loop()  # Do not change this
@@ -45,10 +43,13 @@ bot_id = me['id']
 keys = dict(
     here = {'app_id': 'key_id_here', 'app_code': 'key_code_here'},  # https://here.com
     yandex = 'trnsl.1.1.20190811T184100Z.f3e1e6d6d3507525.7ea9c786af32b18cedeb125ca46cc2d9ee154e09',#https://tech.yandex.com/translate
-    giphy = '7f6ws7EvslO9BuaAKie9BieyYnD3OkkT',# https://developers.giphy.com
+    giphy = '7f6ws7EvslO9BuaAKie9BieyYnD3OkkT',    # https://developers.giphy.com
+    token_dropbox = 'sl.AeuCjBNDEHfTE_h_Gb9MPdzL7ivKysKH1zhJ6OCrRoAOJ_-yC8KcYj7-eJx7M7H31Ieq_wpIXuDanHp3hPhVn28RHz4vncB_LoJx68sWQ2O_zUWJTe_9MbV2SeXN_kHJbvXqaHq2x6U', #https://www.dropbox.com/developers/
 )
 
-
+logs = 522510051    #-1001215401730
+sudoers = [522510051,]
+administradores = [522510051,]
 backups_chat = 522510051  # Put a 0, False or None to disable ou seu id privado ou id privado de um canal ou grupo
 backup_hours = ['15:56']
 

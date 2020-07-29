@@ -20,9 +20,14 @@ import backups
 import db_handler as db
 from config import bot, na_bot, enabled_plugins, logs, version, backups_chat
 from utils import send_to_dogbin
+import os
+
+
 ep = []
 n_ep = {}
 
+#desabilita o log que nao existe gpu
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 for num, i in enumerate(enabled_plugins):
     try:
         print(Fore.RESET + 'Carregando plugins ............................................................................................................... [{}/{}]'.format(num + 1, len(enabled_plugins)), end='\r')

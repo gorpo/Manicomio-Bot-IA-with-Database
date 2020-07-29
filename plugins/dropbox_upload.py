@@ -15,7 +15,7 @@
 import os
 import dropbox
 import re
-from config import bot,token_dropbox,administradores
+from config import bot,keys,administradores
 from datetime import datetime
 
 async def dropbox_upload(msg):
@@ -23,6 +23,7 @@ async def dropbox_upload(msg):
         if msg['from']['id']  in administradores:
             chat_id = msg['chat']['id']
             texto = msg['text']
+            token_dropbox = keys['token_dropbox']
             try:
                 if 'document' in msg.get('reply_to_message') and texto.lower().startswith('dropbox'):
                     id_arquivo = msg.get('reply_to_message')['document']['file_id']
@@ -33,7 +34,7 @@ async def dropbox_upload(msg):
                     if tamanho < 10000000:
                         await bot.download_file(id_arquivo, f'arquivos/{nome_arquivo}')
                         await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Dropbox`",'markdown', reply_to_message_id=msg['message_id'])
-                        targetfile = f"/GDRIVE_TCXSPROJECT/MARCINHO_BOT/{nome_arquivo}"
+                        targetfile = f"/Manicomio_bot/{nome_arquivo}"
                         d = dropbox.Dropbox(token_dropbox)
                         with open(f'arquivos/{nome_arquivo}', "rb") as f:
                             meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
@@ -58,7 +59,7 @@ async def dropbox_upload(msg):
                     if tamanho < 10000000:
                         await bot.download_file(id_arquivo, f'arquivos/{nome_arquivo}')
                         await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Dropbox`",'markdown', reply_to_message_id=msg['message_id'])
-                        targetfile = f"/GDRIVE_TCXSPROJECT/MARCINHO_BOT/{nome_arquivo}"
+                        targetfile = f"/Manicomio_bot/{nome_arquivo}"
                         d = dropbox.Dropbox(token_dropbox)
                         with open(f'arquivos/{nome_arquivo}', "rb") as f:
                             meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
@@ -77,7 +78,7 @@ async def dropbox_upload(msg):
                     nome_arquivo = f'imagem_{data}.jpg'
                     await bot.download_file(id_arquivo, f"arquivos/{nome_arquivo}")
                     await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Dropbox`",'markdown', reply_to_message_id=msg['message_id'])
-                    targetfile = f"/GDRIVE_TCXSPROJECT/MARCINHO_BOT/{nome_arquivo}"
+                    targetfile = f"/Manicomio_bot/{nome_arquivo}"
                     d = dropbox.Dropbox(token_dropbox)
                     with open(f'arquivos/{nome_arquivo}', "rb") as f:
                         meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))

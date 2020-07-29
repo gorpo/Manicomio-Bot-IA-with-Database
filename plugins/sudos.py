@@ -27,7 +27,7 @@ from amanobot.exception import TelegramError
 from emoji import emojize
 import db_handler as db
 from utils import backup_sources
-from config import bot, bot_id, bot_username, git_repo, sudoers,logs,token_dropbox
+from config import bot, bot_id, bot_username, git_repo, sudoers,logs,keys
 import subprocess
 import sqlite3
 import dropbox
@@ -64,7 +64,7 @@ async def sudos(msg):
                 os.remove(nome_bkp)
             else:
                 pass
-                #await bot.sendMessage(msg['chat']['id'], '***Somente administradores podem apagar as perguntas cadastradas***', 'Markdown')
+
 
 
             if msg['text'] == '!sudos' or msg['text'] == '/sudos' or msg['text'] == 'sudos':
@@ -209,10 +209,10 @@ baixar - baixa um documento para o server
                         proc = subprocess.Popen(text, shell=True,  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                         stdout, stderr = proc.communicate()
                         #print(stdout)
-                        f =  open('foo.txt', 'a')
+                        f =  open('arquivos/foo.txt', 'a')
                         f.write(str(stdout.decode('Windows-1252')))
                         f.close()
-                        r = open('foo.txt','r').readlines()
+                        r = open('arquivos/foo.txt','r').readlines()
                         todas = []
                         separador = ' '
                         for line in r:
@@ -223,7 +223,7 @@ baixar - baixa um documento para o server
                                 todas.append(line1)
                         #print(f'{separador.join(map(str, todas))}')
                         #print(todas)
-                        os.remove('foo.txt')
+                        os.remove('arquivos/foo.txt')
                         await bot.sendMessage(msg['chat']['id'],f"`{separador.join(map(str, todas))}`",'markdown',  reply_to_message_id=msg['message_id'])
                 return True
 
@@ -393,9 +393,10 @@ baixar - baixa um documento para o server
                     nome_arquivo = '_'
                 cstrftime = datetime.now().strftime('%d/%m/%Y - %H:%M:%S')
                 fname = backup_sources(nome_arquivo)
+                token_dropbox = keys['token_dropbox']
                 if not os.path.getsize(fname) > 52428800:
                     await bot.sendDocument(msg['chat']['id'], open(fname, 'rb'), caption="📅 " + cstrftime)
-                    targetfile = f"/GDRIVE_TCXSPROJECT/MARCINHO_BOT/{nome_arquivo}"
+                    targetfile = f"/Manicomio_bot/{nome_arquivo}"
                     d = dropbox.Dropbox(token_dropbox)
                     with open(fname, "rb") as f:
                         meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
@@ -405,7 +406,7 @@ baixar - baixa um documento para o server
                     await bot.editMessageText((sent['chat']['id'], sent['message_id']), f"`✅ Backup concluído:`\nDropbox link:{dl_url}")
                     os.remove(fname)
                 else:
-                    await bot.editMessageText((sent['chat']['id'], sent['message_id']), f'Ei, o tamanho do backup passa de 50 MB, então não posso enviá-lo aqui.\n\nNome do arquivo: `{fname}`',parse_mode='Markdown')
+                    await bot.editMessageText((sent['chat']['id'], sent['message_id']), f'Ei, o tamanho do backup passa de 50 MB, então não posso enviá-lo, ele está salvo na pasta da programação, mova ele.\n\nNome do arquivo: `{fname}`',parse_mode='Markdown')
                 return True
 
 
