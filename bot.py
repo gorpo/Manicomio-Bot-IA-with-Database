@@ -28,6 +28,9 @@ n_ep = {}
 
 #desabilita o log que nao existe gpu
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+
+
 for num, i in enumerate(enabled_plugins):
     try:
         print(Fore.RESET + 'Carregando plugins ............................................................................................................... [{}/{}]'.format(num + 1, len(enabled_plugins)), end='\r')

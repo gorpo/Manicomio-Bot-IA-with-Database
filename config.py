@@ -45,6 +45,7 @@ keys = dict(
     yandex = 'trnsl.1.1.20190811T184100Z.f3e1e6d6d3507525.7ea9c786af32b18cedeb125ca46cc2d9ee154e09',#https://tech.yandex.com/translate
     giphy = '7f6ws7EvslO9BuaAKie9BieyYnD3OkkT',    # https://developers.giphy.com
     token_dropbox = 'sl.AeuCjBNDEHfTE_h_Gb9MPdzL7ivKysKH1zhJ6OCrRoAOJ_-yC8KcYj7-eJx7M7H31Ieq_wpIXuDanHp3hPhVn28RHz4vncB_LoJx68sWQ2O_zUWJTe_9MbV2SeXN_kHJbvXqaHq2x6U', #https://www.dropbox.com/developers/
+    token_imgur = "ebfc2558bda96e5",        #https://api.imgur.com/oauth2/addclient
 )
 
 logs = 522510051    #-1001215401730

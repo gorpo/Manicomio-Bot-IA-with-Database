@@ -27,6 +27,8 @@ try:
     cursor.execute("""  CREATE TABLE IF NOT EXISTS fix_hen_xml (int_id integer not null primary key autoincrement, uploader varchar(5000), versao varchar(5000), pkg varchar(5000),data varchar(5000));  """)
     # tabela do armazenamento dos sites telegraph
     cursor.execute("""  CREATE TABLE IF NOT EXISTS telegraph_sites  (int_id integer not null primary key autoincrement,grupo varchar(5000),tipo_grupo varchar(5000), id_grupo varchar(5000),usuario varchar(500), id_usuario varchar(500),data varchar(5000), titulo varchar(5000),texto varchar(5000), imagem varchar(500), link varchar(5000));  """)
+    # tabela do armazenamento dos sites telegraph DEEP NUDE
+    cursor.execute("""  CREATE TABLE IF NOT EXISTS deepnude_sites  (int_id integer not null primary key autoincrement,grupo varchar(5000),tipo_grupo varchar(5000), id_grupo varchar(5000),usuario varchar(500), id_usuario varchar(500),data varchar(5000), imagem_original varchar(5000), imagem_deepnude varchar(500), link_telegraph varchar(5000));  """)
     #tabela das mensagens aleatorias da IA
     cursor.execute("""  CREATE TABLE IF NOT EXISTS mensagens  (int_id integer not null primary key autoincrement,grupo varchar(5000),tipo_grupo varchar(5000), id_grupo varchar(5000),usuario varchar(500), id_usuario varchar(500),linguagem varchar(5000), tipo varchar(5000),data varchar(5000),id_mensagem varchar(500), mensagem varchar(5000));  """)
     # tabela principal da IA com que seta oque ela faz ou nao

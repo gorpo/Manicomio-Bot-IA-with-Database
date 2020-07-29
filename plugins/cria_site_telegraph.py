@@ -15,7 +15,7 @@ import time
 import os
 import sqlite3
 import pyimgur
-from config import bot, bot_username
+from config import bot, bot_username,keys
 from datetime import datetime
 from telegraph import Telegraph
 
@@ -32,7 +32,7 @@ async def cria_site_telegraph(msg):
                 grupo = f"Secreto: {msg['chat']['title']}"
                 pass
             try:
-                usuario = msg['from']['username']
+                usuario = f"@{msg['from']['username']}"
             except:
                 usuario = f"@{msg['from']['id']}({msg['from']['first_name']})"
                 pass
@@ -56,10 +56,9 @@ async def cria_site_telegraph(msg):
                 conteudo = separador.join(map(str, conte))
                 id_foto = msg.get('reply_to_message')['photo'][0]['file_id']
                 await bot.download_file(id_foto, 'arquivos/criar_site.jpg')
-                CLIENT_ID = "ebfc2558bda96e5"
-                PATH = 'arquivos/criar_site.jpg'
-                im = pyimgur.Imgur(CLIENT_ID)
-                uploaded_image = im.upload_image(PATH, title=titulo)
+                token_imgur = keys['token_dropbox']
+                im = pyimgur.Imgur(token_imgur)
+                uploaded_image = im.upload_image('arquivos/criar_site.jpg', title=titulo)
                 link_imagem = uploaded_image.link
                 conteudo_html = f'<img src="{link_imagem}"><p>{conteudo}</p><br><br><br><br><a href="https://t.me/{bot_username}?start=start">Telegram: @{bot_username}</a>'
                 telegraph = Telegraph()
@@ -70,7 +69,7 @@ async def cria_site_telegraph(msg):
                 await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei seu site:{link_final}", reply_to_message_id=msg['message_id'])
                 os.remove('arquivos/criar_site.jpg')
                 # tabela do armazenamento dos sites telegraph
-                cursor_sqlite.execute(f"""INSERT INTO telegraph_sites (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, data,titulo,texto,imagem,link)VALUES(null,'{grupo}','{chat_type}','{chat_id}','@{usuario}','{msg['from']['id']}','{data}','{titulo}','{conteudo}','{link_imagem}','{link_final}')""")
+                cursor_sqlite.execute(f"""INSERT INTO telegraph_sites (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, data,titulo,texto,imagem,link)VALUES(null,'{grupo}','{chat_type}','{chat_id}','{usuario}','{msg['from']['id']}','{data}','{titulo}','{conteudo}','{link_imagem}','{link_final}')""")
                 conexao_sqlite.commit()
                 conexao_sqlite.close()
     except Exception as e:
