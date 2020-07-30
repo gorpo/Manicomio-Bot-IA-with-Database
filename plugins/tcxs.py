@@ -220,7 +220,7 @@ async def tcxs(msg):
     <View id="ps1_items_link">
     <Attributes>
         <Table key="ps1_item_link">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PS1/download.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PS1/download.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} </String></Pair>
         <Pair key="info"><String>TCXS - {descricao} </String></Pair>
         <Pair key="module_name"><String>webrender_plugin</String></Pair>
@@ -242,7 +242,7 @@ async def tcxs(msg):
         `Abaixo de <Attributes> cole:`
         ```
     <Table key="ps1_{nome_xml}">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PS1/{nome_xml}.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PS1/{nome_xml}.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} - TCXS</String></Pair>
         <Pair key="info"><String> {descricao}- TCXS</String></Pair>
     </Table>```
@@ -301,7 +301,7 @@ async def tcxs(msg):
     <View id="ps2_items_link">
     <Attributes>
         <Table key="ps2_item_link">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PS2/download.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PS2/download.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} </String></Pair>
         <Pair key="info"><String>TCXS - {descricao} </String></Pair>
         <Pair key="module_name"><String>webrender_plugin</String></Pair>
@@ -323,7 +323,7 @@ async def tcxs(msg):
                 `Abaixo de <Attributes> cole:`
                 ```
     <Table key="ps2_{nome_xml}">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PS2/{nome_xml}.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PS2/{nome_xml}.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} - TCXS</String></Pair>
         <Pair key="info"><String> {descricao}- TCXS</String></Pair>
     </Table>```
@@ -381,7 +381,7 @@ async def tcxs(msg):
     <View id="psp_items_link">
     <Attributes>
     <Table key="psp_item_link">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PSP/download.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PSP/download.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} </String></Pair>
         <Pair key="info"><String>TCXS - {descricao} </String></Pair>
         <Pair key="module_name"><String>webrender_plugin</String></Pair>
@@ -402,7 +402,7 @@ async def tcxs(msg):
                 `Abaixo de <Attributes> cole:`
                 ```
     <Table key="psp_{nome_xml}">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PSP/{nome_xml}.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PSP/{nome_xml}.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} - TCXS</String></Pair>
         <Pair key="info"><String> {descricao}- TCXS</String></Pair>
     </Table>```
@@ -463,21 +463,21 @@ async def tcxs(msg):
     <View id="ps3_items_link">
     <Attributes>
          <Table key="ps3_item_0">
-            <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/DLCS/download.png</String></Pair>
+            <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/DLCS/download.png</String></Pair>
             <Pair key="title"><String>TCXS Parte1 GAME- {nome}</String></Pair>
             <Pair key="info"><String>TCXS - {descricao}</String></Pair>
             <Pair key="module_name"><String>webrender_plugin</String></Pair>
             <Pair key="module_action"><String>{link1}</String></Pair>
         </Table>
         <Table key="ps3_item_1">
-            <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/DLCS/download.png</String></Pair>
+            <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/DLCS/download.png</String></Pair>
             <Pair key="title"><String>TCXS Parte GAME+LIC- {nome}</String></Pair>
             <Pair key="info"><String>TCXS - {descricao}</String></Pair>
             <Pair key="module_name"><String>webrender_plugin</String></Pair>
             <Pair key="module_action"><String>{link2}</String></Pair>
         </Table>
         <Table key="ps3_item_2">
-            <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/DLCS/download.png</String></Pair>
+            <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/DLCS/download.png</String></Pair>
             <Pair key="title"><String>TCXS Parte GAME+LIC- {nome}</String></Pair>
             <Pair key="info"><String>TCXS - {descricao}</String></Pair>
             <Pair key="module_name"><String>webrender_plugin</String></Pair>
@@ -500,7 +500,7 @@ async def tcxs(msg):
              `Abaixo de <Attributes> cole:`
              ```
     <Table key="ps3_{nome_xml}">
-        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/arquivos/PS3/{nome_xml}.jpg</String></Pair>
+        <Pair key="icon"><String>/dev_hdd0/game/TCXSPROJECT/USRDIR/IMAGES/PS3/{nome_xml}.jpg</String></Pair>
         <Pair key="title"><String>TCXS - {nome} - TCXS</String></Pair>
         <Pair key="info"><String>{descricao} - TCXS</String></Pair>
     </Table>```
@@ -550,56 +550,11 @@ async def tcxs(msg):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             return True
 
       
 
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
