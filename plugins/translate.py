@@ -20,7 +20,7 @@ import time
 from config import bot, sudoers, logs, bot_username, keys
 from utils import send_to_dogbin, send_to_hastebin
 
-traducao = keys['yandex']
+traducao = keys['token_yandex']
 
 idiomas = [
     'az', 'ml', 'sq', 'mt', 'am', 'mk', 'en', 'mi', 'ar', 'mr', 'hy', 'mhr', 'af', 'mn', 'eu', 'de', 'ba', 'ne', 'be',

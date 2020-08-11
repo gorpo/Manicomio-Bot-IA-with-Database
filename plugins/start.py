@@ -16,6 +16,7 @@ from amanobot.namedtuple import InlineKeyboardMarkup
 from config import bot, version, bot_username, git_repo
 import keyboard
 
+
 async def start(msg):
     if msg.get('text'):
         if msg['text'] == 'lista jogos' or msg['text'] == 'lista de jogos' or msg['text'] == 'Lista jogos' or msg[

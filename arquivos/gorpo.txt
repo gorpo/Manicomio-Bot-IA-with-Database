@@ -1,2 +1,0 @@
-gorpo
-arquivo ta aqui so para gerar pasta no git
