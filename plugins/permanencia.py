@@ -137,38 +137,7 @@ async def permanencia(msg):
                         await bot.sendMessage(chat_id, f"@{msg['from']['username']} `este comando é permitido so para admin's`",'markdown')
             except:
                 pass
-            ## SISTEMA DE BANIMENTO--------------------------------------------------------------->
-            # sistema de verificaçao automatica para banimento no grupo
-            try:
-                conexao_sqlite = sqlite3.connect('bot_database.db')
-                conexao_sqlite.row_factory = sqlite3.Row
-                cursor_sqlite = conexao_sqlite.cursor()
-                hoje = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
-                cursor_sqlite.execute("""SELECT * FROM permanencia; """)
-                resultados = cursor_sqlite.fetchall()
-                for resutado in resultados:
-                    data_inicial = resutado['data_inicial']
-                    data_ban = resutado['data_final']
-                    id_doador = resutado['id_doador']
-                    doador = resutado['doador']
-                    dias = resutado['dias']
-                    aviso = resutado['data_aviso']
-                    id_grupo = resutado['id_grupo']
-                    # ALERTA DE AVISO PARA O DOADOR----:
-                    try:
-                        if hoje[0:2] == aviso[0:2]:
-                            await bot.sendMessage(id_grupo,f"🤖 {doador} ***Falta uma semana para você grupo, caso ainda tenha interesse em continuar usando a loja faça uma doação, envie o comprovante aqui no grupo que um de nossos administradores irá colocar mas dias em sua permanencia.***\n`Usuário:` {doador}\n`Id_Usuário:` {id_doador}\n`Início:` {data_inicial}\n`Termino:` {data_ban}\n`Permanência:` {dias}",'markdown')
-                        # BANE O USUARIO CASO A DATA TENHA SIDO IGUAL A DO DIA HOJE
-                        if hoje[3:5] == data_ban[3:5]:
-                            await bot.kickChatMember(str(id_grupo), id_doador)
-                            cursor_sqlite.execute(f"""DELETE FROM permanencia WHERE doador='{doador}'""")
-                            conexao_sqlite.commit()
-                            await bot.sendMessage(str(id_grupo),f"🤖 ***Removido do grupo pois deu a sua permanência do grupo.***\n`Usuário:` {doador}\n`Id_Usuário:` {id_doador}\n`Início:` {data_inicial}\n`Termino:` {data_ban}\n`Permanência:` {dias}",'markdown')
-                            await bot.unbanChatMember(str(id_grupo), id_doador)
-                    except:
-                        pass
-            except Exception as e:
-                print(e)
+
 
 
     except Exception as e:

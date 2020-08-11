@@ -139,9 +139,16 @@ Se esse erro persistir entre em contato com @GorpoOrko.'''.format(e.description)
                         if existe_cadastro == 1:
                             await bot.sendMessage(chat_id, "🤖 `Usuário ja cadastrado, apague ele manualmente e insira os dados novamente`", 'markdown')
                         else:
+                            await bot.sendMessage(chat_id, f"""🤖 Dados inseridos com exito no cadastro de permanência do grupo.
+👮Admin: {admin}
+🧑Usuário: {doador}
+⚠️Id_Usuário: {id_doador}
+🕐Início: {data_inicial}
+🕐Termino: {data_final}
+🚨Aviso Vencimento: {data_aviso}
+📅Permanência: {dias}""")
                             cursor_sqlite.execute(f"""INSERT INTO permanencia(int_id,grupo,id_grupo, admin, doador, id_doador, dias, data_inicial, data_final,data_aviso)VALUES(null,'{msg['chat']['title']}','{msg['chat']['id']}','{admin}','{doador}','{id_doador}','{dias}','{data_inicial}','{data_final}','{data_aviso}')""")
                             conexao_sqlite.commit()
-                            await bot.sendMessage(chat_id,f"🤖 ***Dados inseridos com exito no cadastro de permanência do grupo.***\n`Admin:` {admin}\n`Usuário:` {doador}\n`Id_Usuário:` {id_doador}\n`Início:` {data_inicial}\n`Termino:` {data_final}\n`Aviso Vencimento:` {data_aviso}\n`Permanência:` {dias}",'markdown')
                             #print(admin, doador, id_doador, dias, data_inicial, data_final)
                             try:#PEGA A FOTO DO USUARIO E ENVIA NO Grupo
                                 a = await bot.getUserProfilePhotos(msg['new_chat_member']['id'])

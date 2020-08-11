@@ -396,7 +396,7 @@ baixar - baixa um documento para o server
                 token_dropbox = keys['token_dropbox']
                 if not os.path.getsize(fname) > 52428800:
                     await bot.sendDocument(msg['chat']['id'], open(fname, 'rb'), caption="📅 " + cstrftime)
-                    targetfile = f"/Manicomio_bot/{nome_arquivo}"
+                    targetfile = f"/Manicomio_bot/{fname}"
                     d = dropbox.Dropbox(token_dropbox)
                     with open(fname, "rb") as f:
                         meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))

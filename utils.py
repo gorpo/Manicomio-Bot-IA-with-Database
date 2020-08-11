@@ -80,10 +80,10 @@ def backup_sources(nome,output_file=None):
         for folder, _, files in os.walk('.'):
             for file in files:
                 if platform == 'linux' or platform == 'linux2':#foi adicionado para nao incluir as pastas no linux
-                    if file != fname and not file.endswith('.pyc') and '.heroku' not in folder.split('/'):  #and 'dls' not in folder.split('/')
+                    if file != fname and not file.endswith('.pyc') and  not file.endswith('.lib') and '.heroku' not in folder.split('/') and '.git' not in folder.split('/') and '.idea' not in folder.split('/'):
                             backup.write(os.path.join(folder, file))
                 if platform == 'win32':#adicionado para nao pegar a pasta .git no backup
-                    if file != fname and not file.endswith('.pyc') and '.heroku' not in folder.split('/'): #and 'dls' not in folder.split('/')
+                    if file != fname and not file.endswith('.pyc') and  not file.endswith('.lib') and '.heroku' not in folder.split('/') and '.git' not in folder.split('/') and '.idea' not in folder.split('/'):
                         if '.\.git' in folder:#deletar isto em caso de uso linux
                             pass
                         else:

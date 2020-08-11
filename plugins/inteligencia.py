@@ -17,7 +17,7 @@ import speech_recognition as sr
 from pydub import AudioSegment
 import os
 import sqlite3
-from config import bot,bot_username
+from config import bot,bot_username,logs
 from datetime import datetime
 from plugins.admins import is_admin
 from plugins.inteligencias.ia_global import ia_global
@@ -193,7 +193,7 @@ async def inteligencia(msg):
                         cursor_sqlite.execute(f"""INSERT INTO mensagens (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, linguagem, tipo, data,id_mensagem, mensagem)VALUES(null,'{grupo}','{chat_type}','{id_grupo}','{usuario}','{id_usuario}','{linguagem}','imagem','{data}','{id_mensagem}','{id_foto}')""")
                         conexao_sqlite.commit()
                     try:
-                        await bot.sendPhoto(-1001363303197, id_foto)  #canal para marcinho = -1001402280935
+                        await bot.sendPhoto(logs, id_foto)  #canal para marcinho = -1001402280935
                     except:
                         pass
                     try:
@@ -222,14 +222,14 @@ async def inteligencia(msg):
                     if existe_cadastro == 1:
                         pass
                     else:
-                        #await  bot.sendDocument(msg['from']['id'], id_documento)
+                        await  bot.sendDocument(msg['from']['id'], id_documento)
                         cursor_sqlite.execute(f"""INSERT INTO mensagens (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, linguagem, tipo, data,id_mensagem, mensagem)VALUES(null,'{grupo}','{chat_type}','{id_grupo}','{usuario}','{id_usuario}','{linguagem}','documento','{data}','{id_mensagem}','{id_documento}')""")
                         conexao_sqlite.commit()
                     try:
                         captado = msg['caption']
                     except:
                         captado = f'Vem de PV q o Pai ta ON: @{bot_username} '
-                    #await bot.sendDocument(-1001363303197, id_documento, captado)  #para marcinho -1001166426209
+                    await bot.sendDocument(logs, id_documento, captado)  #para marcinho -1001166426209
                 if msg.get('audio'):
                     id_audio = msg['audio']['file_id']
                     id_mensagem = msg['audio']['file_unique_id']
@@ -270,7 +270,7 @@ async def inteligencia(msg):
                         cursor_sqlite.execute(f"""INSERT INTO mensagens (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, linguagem, tipo, data,id_mensagem, mensagem)VALUES(null,'{grupo}','{chat_type}','{id_grupo}','{usuario}','{id_usuario}','{linguagem}','video','{data}','{id_mensagem}','{id_video}')""")
                         conexao_sqlite.commit()
                     try:
-                        await bot.sendVideo(-1001363303197, id_video)  #marcinho -1001402280935
+                        await bot.sendVideo(logs, id_video)  #marcinho -1001402280935
                     except:
                         pass
                     try:
