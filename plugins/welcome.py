@@ -122,7 +122,7 @@ Se esse erro persistir entre em contato com @GorpoOrko.'''.format(e.description)
                         print(f"Novo usuário: {doador} entrou no Grupo {msg['chat']['title']}")
                         id_doador = msg['new_chat_member']['id']
                         admin = 'cadastro automatico'
-                        dias = 35 #QUANTIDADE DE DIAS SETADA MANUALMENTE, POR ISTO COMO COMANDO NA DATABASE
+                        dias = 365 #QUANTIDADE DE DIAS SETADA MANUALMENTE, POR ISTO COMO COMANDO NA DATABASE
                         hoje = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
                         data_inicial = hoje
                         dias_restantes = datetime.now() + relativedelta(days=int(dias))#--------------------------------
