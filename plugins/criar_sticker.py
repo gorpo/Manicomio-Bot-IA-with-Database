@@ -15,7 +15,7 @@ from amanobot.namedtuple import InlineKeyboardMarkup
 from amanobot.exception import TelegramError
 from config import bot, bot_username
 
-async def kibe(msg):
+async def criar_sticker(msg):
     if msg.get('text'):
         if msg['text'].startswith('/stickerid') or msg['text'].startswith('!stickerid'):
             if msg.get('reply_to_message') and msg['reply_to_message'].get('sticker'):

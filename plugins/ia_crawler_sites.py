@@ -89,7 +89,7 @@ def crawler(url, max_urls=50):
 
 
 
-async def crawling(msg):
+async def ia_crawler_sites(msg):
     try:
         chat_type = msg['chat']['type']
         chat_id = msg['chat']['id']

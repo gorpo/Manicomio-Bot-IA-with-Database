@@ -11,7 +11,7 @@
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]f
 
 import sqlite3
-from config import bot, administradores
+from config import bot
 from plugins.admins import is_admin
 import time
 
@@ -55,7 +55,7 @@ async def ia_cadastro_perguntas(msg):
                     pass
 
                 try:  # LIMPAR PERGUNTAS DOS USUARIOS------------------------------------------------------------->
-                    if texto.lower() == 'apagar perguntas' and msg['from']['id'] in administradores:#admin manual setado no confis.py
+                    if texto.lower() == 'apagar perguntas':#admin manual setado no confis.py
                         if adm['user'] == True:
                             cursor_sqlite.execute("""DELETE FROM perguntas""")
                             conexao_sqlite.commit()

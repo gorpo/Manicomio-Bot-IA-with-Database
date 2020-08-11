@@ -1,0 +1,28 @@
+# Created by .ignore support plugin (hsz.mobi)
+!/bot_files/plugins/deep_nude/checkpoints/cm.lib
+!/bot_files/plugins/deep_nude/checkpoints/mm.lib
+!/bot_files/plugins/deep_nude/checkpoints/mn.lib
+.idea/
+.git/
+!/testes.py
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg

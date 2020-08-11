@@ -13,8 +13,7 @@
 
 from config import bot, bot_username
 from db_handler import conn, cursor
-from .admins import is_admin
-
+from plugins.admins import is_admin
 
 def get_rules(chat_id):
     cursor.execute('SELECT rules FROM chats WHERE chat_id = (?)', (chat_id,))

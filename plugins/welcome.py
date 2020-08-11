@@ -149,6 +149,7 @@ Se esse erro persistir entre em contato com @GorpoOrko.'''.format(e.description)
 📅Permanência: {dias}""")
                             cursor_sqlite.execute(f"""INSERT INTO permanencia(int_id,grupo,id_grupo, admin, doador, id_doador, dias, data_inicial, data_final,data_aviso)VALUES(null,'{msg['chat']['title']}','{msg['chat']['id']}','{admin}','{doador}','{id_doador}','{dias}','{data_inicial}','{data_final}','{data_aviso}')""")
                             conexao_sqlite.commit()
+                            
                             #print(admin, doador, id_doador, dias, data_inicial, data_final)
                             try:#PEGA A FOTO DO USUARIO E ENVIA NO Grupo
                                 a = await bot.getUserProfilePhotos(msg['new_chat_member']['id'])

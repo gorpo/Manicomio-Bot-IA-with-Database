@@ -185,7 +185,7 @@ baixar - baixa um documento para o server
 
 
             #reinicia o bot
-            elif msg['text'] == '!restart' or msg['text'] == '/restart@gorpo_bot' + bot_username or msg['text'] == 'restart' or msg['text'] == 'reiniciar':
+            elif msg['text'] == '!restart' or msg['text'] == '/restart@' + bot_username or msg['text'] == 'restart' or msg['text'] == 'reiniciar':
                 sent = await bot.sendMessage(msg['chat']['id'], 'Reiniciando...',
                                              reply_to_message_id=msg['message_id'])
                 db.set_restarted(sent['chat']['id'], sent['message_id'])

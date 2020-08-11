@@ -137,9 +137,7 @@ async def permanencia(msg):
                         await bot.sendMessage(chat_id, f"@{msg['from']['username']} `este comando é permitido so para admin's`",'markdown')
             except:
                 pass
-
-
-
+            
     except Exception as e:
         pass
 

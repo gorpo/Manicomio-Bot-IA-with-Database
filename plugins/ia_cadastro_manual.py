@@ -13,11 +13,10 @@
 
 
 import sqlite3
+
 from config import bot
 from datetime import datetime
 from plugins.admins import is_admin
-
-
 
 async def ia_cadastro_manual(msg):
     try:
@@ -272,6 +271,7 @@ async def ia_cadastro_manual(msg):
                             await bot.sendMessage(chat_id,f"@{msg['from']['username']} `este comando é permitido so para admin's`",'markdown')
                 except:
                     pass
+        conexao_sqlite.close()
 #excessao final para tratar do codigo todo--->
     except:
         pass

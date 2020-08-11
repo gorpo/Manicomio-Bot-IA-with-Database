@@ -74,6 +74,7 @@ if __name__ == '__main__':
         backups.backup_service()
 
     loop.create_task(MessageLoop(bot, handle).run_forever())
+
     wr = db.get_restarted()
     if wr:
         try:

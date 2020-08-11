@@ -35,6 +35,8 @@ async def ia_privado_bot(msg):
             if msg.get('text'):
                 if msg.get('text') == 'att':
                     await bot.sendMessage(chat_id, f"@{msg['from']['first_name']} você esta tentando roubar a TCXS Store, cara vou pegar seu ip e te hackear agora mesmo!!! ", 'markdown',reply_to_message_id=msg['message_id'])
+
+                #sistema de envio de mensagens automaticas randomicas com base na database
                 conexao_sqlite = sqlite3.connect('bot_database.db')
                 conexao_sqlite.row_factory = sqlite3.Row
                 cursor_sqlite = conexao_sqlite.cursor()
@@ -62,5 +64,6 @@ async def ia_privado_bot(msg):
                 if tipo_mensagem == 'sticker':
                     await bot.sendSticker(chat_id, sticker=mensagem_bot)
                     print(f'🤖 [private_bot] Bot enviou sticker: {msg["chat"]["title"]} com a id {mensagem_bot}')
+
         except Exception as e:
             pass
