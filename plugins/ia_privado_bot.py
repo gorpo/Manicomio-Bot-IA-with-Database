@@ -19,10 +19,10 @@ import sqlite3
 from config import bot, sudoers, logs, bot_username
 
 async def ia_privado_bot(msg):
-    chat_id = msg['chat']['id']
-    chat_type = msg['chat']['type']
-    if chat_type == 'private':
-        try:
+    try:
+        chat_id = msg['chat']['id']
+        chat_type = msg['chat']['type']
+        if chat_type == 'private':
             if msg.get('voice'):
                 await bot.download_file(msg['voice']['file_id'], 'arquivos/audio_usuario_db.ogg')
                 sound = AudioSegment.from_file("arquivos/audio_usuario_db.ogg")
@@ -65,5 +65,5 @@ async def ia_privado_bot(msg):
                     await bot.sendSticker(chat_id, sticker=mensagem_bot)
                     print(f'🤖 [private_bot] Bot enviou sticker: {msg["chat"]["title"]} com a id {mensagem_bot}')
 
-        except Exception as e:
-            pass
+    except Exception as e:
+        pass

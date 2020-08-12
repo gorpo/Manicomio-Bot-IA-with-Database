@@ -23,7 +23,7 @@ async def tcxs(msg):
     cursor_sqlite = conexao_sqlite.cursor()
     data = datetime.now().strftime('%d/%m/%Y %H:%M')
     try:#SISTEMA DE CADASTRO LOJA PARA DOADORES PAGA   | $$$$$ | $$$$$$-------------------------------------->
-        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == logs or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
+        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 522510051 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
             if msg['document']['file_name'].split('.')[-1] == 'pkg' and 'tcxs' in msg['document']['file_name'].lower():
                 if 'free' in msg['document']['file_name'].lower():
                     pass
@@ -37,7 +37,7 @@ async def tcxs(msg):
     except:
         pass
     try:#SISTEMA DE CADASTRO LOJA GRATUITA-------------------------------------->
-        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == logs or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
+        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 522510051 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
             if msg['document']['file_name'].split('.')[-1] == 'pkg' and 'free' in msg['document']['file_name'].lower():
                 id_pkg = msg['document']['file_id']
                 nome_pkg = msg['document']['file_name']
@@ -48,7 +48,7 @@ async def tcxs(msg):
     except:
         pass
     try:#SISTEMA DE CADASTRO FIX HAN-------------------------------------->
-        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == logs or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
+        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 522510051 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
             if msg['document']['file_name'].split('.')[0].lower() == 'fix_han' and msg['document']['file_name'].split('.')[-1].lower() == 'pkg':
                 id_pkg = msg['document']['file_id']
                 nome_pkg = msg['document']['file_name']
@@ -59,7 +59,7 @@ async def tcxs(msg):
     except:
         pass
     try:#SISTEMA DE CADASTRO FIX HEN-------------------------------------->
-        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == logs or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
+        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 522510051 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
             if msg['document']['file_name'].split('.')[0].lower() == 'fix_hen' and msg['document']['file_name'].split('.')[-1].lower() == 'pkg':
                 id_pkg = msg['document']['file_id']
                 nome_pkg = msg['document']['file_name']
@@ -70,7 +70,7 @@ async def tcxs(msg):
     except:
         pass
     try:#SISTEMA DE CADASTRO FIX XML CFW-------------------------------------->
-        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == logs or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
+        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 522510051 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
             if msg['document']['file_name'].split('.')[0].lower() == 'category_network_tool2' and msg['document']['file_name'].split('.')[-1].lower() == 'xml':
                 id_pkg = msg['document']['file_id']
                 nome_pkg = msg['document']['file_name']
@@ -81,7 +81,7 @@ async def tcxs(msg):
     except:
         pass
     try:#SISTEMA DE CADASTRO FIX XML HEN-------------------------------------->
-        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == logs or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
+        if msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 522510051 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 758600965 or msg['chat']['type'] == 'private' and msg.get('document') and msg['from']['id'] == 628238139: #id_mit = 758600965   id_ted = 628238139
             if msg['document']['file_name'].split('.')[0].lower() == 'category_network' and msg['document']['file_name'].split('.')[-1].lower() == 'xml':
                 id_pkg = msg['document']['file_id']
                 nome_pkg = msg['document']['file_name']
@@ -550,59 +550,4 @@ async def tcxs(msg):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             return True
-
-      
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
