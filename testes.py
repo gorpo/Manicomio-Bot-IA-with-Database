@@ -1,16 +1,16 @@
-"""a = 1
-b = a
-print(id(a),id(b))
-"""
+from datetime import timedelta, date
+import pymysql.cursors
 
-import sqlite3
+# faz a conexao com o banco de dados
+conexao = pymysql.connect(host='localhost', user='root', password='', db='users_tcxs', charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+cursor = conexao.cursor()
+cursor.execute("select * from usuarios")
+cadastro = cursor.fetchall()
+hoje = date.today().strftime('%d-%m-%Y')
 
-conexao_sqlite = sqlite3.connect('bot_database.db')
-conexao_sqlite.row_factory = sqlite3.Row
-cursor_sqlite = conexao_sqlite.cursor()
-cursor_sqlite.execute("""SELECT * FROM mensagens; """)
-mensagens_sqlite = cursor_sqlite.fetchall()
-for mensagem in mensagens_sqlite:
-    #print(mensagem['tipo'])
-    if mensagem['tipo'] == 'imagem':
-        print(mensagem['mensagem'])
+for dados in cadastro:
+    validade = dados['data_cadastro']  + timedelta(days=31)
+    usuario = dados['usuario']
+    #print(usuario, hoje, validade.strftime('%d-%m-%Y %H:%M:%S'))
+    if validade.strftime('%d-%m-%Y') == hoje:
+        print(usuario, hoje, validade.strftime('%d-%m-%Y'))
