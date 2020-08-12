@@ -22,59 +22,143 @@ ATENÇÃO: Alguns comandos listados devem ser escritos em minusculo e sem acento
 <p>Para rodar arquivos no Heroku é necessário criar um arquivo chamado "Procfile" e nele inserir o tipo de comando que será enviado para o dino do heroku<code>bot: python3 bot.py</code> Crie também um arquivo chamado runtime.txt e nele especifique sua versão do python a ser usada, tenha este arquivo na raiz do seu projeto
 <code>python-3.7.7</code>, esta source ja conta com estes arquivos.</p>
 <h2>Comandos para Desenvolvedor ou quem Hospeda o Bot:</h2>
-<code>!apagar mensagens - apaga tudo IA e faz backup da Database.</code>
-<code>!backup - Faz backup do bot e upload para o Dropbox.</code>
-<code>!update - Atualiza o bot de acordo com codigo postado no Github.</code>
-<code>!cmd - Executa um comando.</code>
-<code>!chat - Obtem infos de um chat.</code>
-<code>!del - Deleta a mensagem respondida.</code>
-<code>!doc - Envia um documento do server.</code>
-<code>!eval - Executa uma função Python.</code>
-<code>!exec - Executa um código Python.</code>
-<code>!leave - O bot sai do chat.</code>
-<code>!plist - Lista os plugins ativos.</code>
-<code>!promote - Promove alguém a admin.</code>
-<code>!restart - Reinicia o bot.</code>
-<code>!upgrade - Atualiza a base do bot com base na branch master do github</code>
-<code>!upload - Envia um arquivo para o servidor.</code>
-<code>!baixar - baixa um documento para o server</code>
-<code>!dropbox - faz upload para o Dropbox</code>
-<code>!link - gera um link direto do Telegram</code>
-<code>  | - Define desligamento do bot, EX: 12|30</code>
+<code>!apagar mensagens - apaga tudo IA e faz backup da Database.</code><br>
+<code>!backup - Faz backup do bot e upload para o Dropbox.</code><br>
+<code>!update - Atualiza o bot de acordo com codigo postado no Github.</code><br>
+<code>!cmd - Executa um comando.</code><br>
+<code>!chat - Obtem infos de um chat.</code><br>
+<code>!del - Deleta a mensagem respondida.</code><br>
+<code>!doc - Envia um documento do server.</code><br>
+<code>!eval - Executa uma função Python.</code><br>
+<code>!exec - Executa um código Python.</code><br>
+<code>!leave - O bot sai do chat.</code><br>
+<code>!plist - Lista os plugins ativos.</code><br>
+<code>!promote - Promove alguém a admin.</code><br>
+<code>!restart - Reinicia o bot.</code><br>
+<code>!upgrade - Atualiza a base do bot com base na branch master do github</code><br>
+<code>!upload - Envia um arquivo para o servidor.</code><br>
+<code>!baixar - baixa um documento para o server</code><br>
+<code>!dropbox - faz upload para o Dropbox</code><br>
+<code>!link - gera um link direto do Telegram</code><br>
+<code>  | - Define desligamento do bot, EX: 12|30</code><br>
 
 <h2>Comandos para administradores:</h2>
-<code>/start - inicia o bot</code>
-<code>/welcome -boas vindas</code>
-<code>/ban -bane usuario</code>
-<code>/unban -desbane usuario</code>
-<code>/kick -kicka usuario</code>
-<code>/mute -muta usuario</code>
-<code>/unmute -desmuta usuario</code>
-<code>/unwarn -remove advertencias</code>
-<code>/warn -adverte usuario</code>
-<code>/pin -fixa posts</code>
-<code>/unpin -desfixa posts</code>
-<code>/title -muda titulo grupo</code>
-<code>/defregras -define regras</code>
-<code>/regras -ler regras</code>
-<code>/config -privado</code>
-<code>/admdebug -debug admin</code>
-<code>/id -id usuario</code>
-<code>/ip -dados ip</code>
-<code>/jsondump -retorna dados</code> 
-<code>/stickerid -id sticker</code>
-<code>/getsticker -baixa sticker</code>
-<code>/criar_sticker -cria pacote stickers</code>
-<code>/kibar -copia sticker para o pacote de stickers</code>
-<code>/mark -repete o texto markdown</code>
-<code>/html -repete o texto HTML</code>
-<code>/request -requisição site</code>
-<code>/recog - reconhecimento com IA (nem sempre disponivel)</code>
-<code>/notepad - cria um site com o texto enviado</code>
-<code>/crawler - pega todos links dentro de um site</code>
-<code>/corrigir - corrige palavras erradas</code>
+<code>/start - inicia o bot</code><br>
+<code>/welcome -boas vindas</code><br>
+<code>/ban -bane usuario</code><br>
+<code>/unban -desbane usuario</code><br>
+<code>/kick -kicka usuario</code><br>
+<code>/mute -muta usuario</code><br>
+<code>/unmute -desmuta usuario</code><br>
+<code>/unwarn -remove advertencias</code><br>
+<code>/warn -adverte usuario</code><br>
+<code>/pin -fixa posts</code><br>
+<code>/unpin -desfixa posts</code><br>
+<code>/title -muda titulo grupo</code><br>
+<code>/defregras -define regras</code><br>
+<code>/regras -ler regras</code><br>
+<code>/config -privado</code><br>
+<code>/admdebug -debug admin</code><br>
+<code>/id -id usuario</code><br>
+<code>/ip -dados ip</code><br>
+<code>/jsondump -retorna dados</code><br> 
+<code>/stickerid -id sticker</code><br>
+<code>/getsticker -baixa sticker</code><br>
+<code>/criar_sticker -cria pacote stickers</code><br>
+<code>/kibar -copia sticker para o pacote de stickers</code><br>
+<code>/mark -repete o texto markdown</code><br>
+<code>/html -repete o texto HTML</code><br>
+<code>/request -requisição site</code><br>
+<code>/recog - reconhecimento com IA (nem sempre disponivel)</code><br>
+<code>/notepad - cria um site com o texto enviado</code><br>
+<code>/crawler - pega todos links dentro de um site</code><br>
+<code>/corrigir - corrige palavras erradas</code><br>
 <code>/link - pega link de um arquivo use como resposta</code><br><br>
 
+<h2>Ferramentas Built-in:</h2>
+<code>/tr      -traduz um texto</code><br>
+<code>/yt      -pesquisa videos no YouTube</code><br>
+<code>/r       -pesquisa um termo no redit</code><br>
+<code>/clima   -exibe informacoes de clima</code><br>
+<code>/coub    -pesquisa de pequenas animações</code><br>
+<code>/dados   -jogo de dados</code><br>
+<code>/gif     -gif do giphy</code><br>
+<code>/git     -usuario do github</code><br>
+<code>/id      -id do usuario</code><br>
+<code>/ip      -informa dados de um ip</code><br>
+<code>/jsondump -retorna dados formatados</code><br>
+<code>/stickerid -pega id de um sticker</code><br>
+<code>/getsticker -baixa um sticker</code><br>
+<code>/pypi -pesquisa libs python</code><br>
+<code>/rextester -interpretador de varias linguagens de programação</code><br>
+<code>/mark -repete o texto informado usando Markdown</code><br>
+<code>/html -repete o texto informado usando HTML</code><br>
+<code>/request -faz uma requisicao a um site</code><br>
+<code>/rt -repete concordando com o usuario na reposta  </code><br>
+<code>/fala -Repete o texto que voce pedir para ele falar</code><br>
+<code>/print -gera um print doque falou</code><br>
+<code>/dogbin - envia seu material em texto para o dogbin</code><br>
+<code>/hastebin - envia seu material em texto para o hastebin</code><br>
+<code>/echo - Repete o texto informado</code><br>
+<code>/shorten - Encurta uma URL.</code><br>
+<code>/recog - reconhecimento com IA (nem sempre disponivel devido uso de GPU)</code><br>
+<code>/notepad - cria um site com o texto enviado</code><br>
+<code>/crawler - pega todos links dentro de um site</code><br>
+<code>/corrigir - corrige palavras erradas</code><br>
+<code>/token - Exibe informaces de um token de um outro bot</code><br>
+
+<h2>Comandos para usuários:</h2>
+<code>/start   -inicia o bot</code><br>
+<code>/regras  -leia nossas regras</code><br>
+<code>/admin   -admins do grupo</code><br>
+<code>/freepkg -loja gratuita PS3 </code><br>
+<code>/fix -fix han</code><br>
+<code>/tutorial -como instalar a loja</code><br>
+<code>/rap -licenças dos jogos  </code><br>
+<code>/desbloqueio -desbloquear PS3</code><br>
+<code>/segundoplano -download </code><br>
+<code>/codigoerro  -codigos PSN/PS3</code><br>
+<code>/listajogos -download direto</code><br>
+<code>/doadores -instruções</code><br>
+<code>/mercadopago -doar/loja </code><br>
+<code>/tcxs -informações sobre </code><br>
+<code>/tcxspyject -criar lojas</code><br>
+<code>/ps1 -cria xml para loja</code><br>
+<code>/ps2 -cria xml para loja </code><br>
+<code>/psp -cria xml para loja</code><br>
+<code>/ps3 -cria xml para loja</code><br>
+<code>/proxy -velocidade no PS3</code><br>
+<code>/tr      -traduz um texto</code><br>
+<code>/yt      -pesquisa videos no YouTube</code><br>
+<code>/r       -pesquisa um termo no redit</code><br>
+<code>/clima   -exibe informacoes de clima</code><br>
+<code>/coub    -pesquisa de pequenas animacoes</code><br>
+<code>/dados   -jogo de dados</code><br>
+<code>/gif     -gif do giphy</code><br>
+<code>/git     -usuario do github</code><br>
+<code>/id      -id do usuario</code><br>
+<code>/ip      -informa dados de um ip</code><br>
+<code>/jsondump -retorna dados formatados</code><br>
+<code>/stickerid -pega id de um sticker</code><br>
+<code>/getsticker -baixa um sticker</code><br>
+<code>/pypi -pesquisa libs python</code><br>
+<code>/rextester -interpretador de varias linguagens de programação</code><br>
+<code>/mark -repete o texto informado usando Markdown</code><br>
+<code>/html -repete o texto informado usando HTML</code><br>
+<code>/request -faz uma requisicao a um site</code><br>
+<code>/rt -repete concordando com o usuario na reposta</code><br>  
+<code>/fala -Repete o texto que voce pedir para ele falar</code><br>
+<code>/print -gera um print doque falou</code><br>
+<code>/dogbin - envia seu material em texto para o dogbin</code><br>
+<code>/hastebin - envia seu material em texto para o hastebin</code><br>
+<code>/echo - Repete o texto informado.</code>    <br>
+<code>/shorten - Encurta uma URL.</code><br>
+<code>/recog - reconhecimento com IA (nem sempre disponivel)</code><br>
+<code>/notepad - cria um site com o texto enviado</code><br>
+<code>/crawler - pega todos links dentro de um site</code><br>
+<code>/corrigir - corrige palavras erradas</code><br>
+<code>/token - Exibe informaces de um token de bot.</code><br>
+<br>
 ***SOBRE O ENVIO DE MENSAGENS DA IA***<br> 
 ```-->  Este bot envia mensagens baseado em dois tipos de inteligência, uma local e outra global, onde a local é tudo que aprendeu naquele grupo e ja a global é oque ele aprendeu por onde passou, veja exemplos:```<br>
 `inteligencia local = irá falar  somente sobre oque aprendeu neste grupo, comando:`<br>
@@ -142,91 +226,6 @@ $comando resposta que o usuário vai receber<br>
 ***Cadastrar Fix HEN XML:*** `Cadastre o FIX HEN XML enviando ela no meu privado exatamente conforme exemplo:` ***category_network.xml***<br>
 
 
-
-<h2>Ferramentas Built-in:</h2>
-<code>/tr      -traduz um texto</code>
-<code>/yt      -pesquisa videos no YouTube</code>
-<code>/r       -pesquisa um termo no redit</code>
-<code>/clima   -exibe informacoes de clima</code>
-<code>/coub    -pesquisa de pequenas animações</code>
-<code>/dados   -jogo de dados</code>
-<code>/gif     -gif do giphy</code>
-<code>/git     -usuario do github</code>
-<code>/id      -id do usuario</code>
-<code>/ip      -informa dados de um ip</code>
-<code>/jsondump -retorna dados formatados</code>
-<code>/stickerid -pega id de um sticker</code>
-<code>/getsticker -baixa um sticker</code>
-<code>/pypi -pesquisa libs python</code>
-<code>/rextester -interpretador de varias linguagens de programação</code>
-<code>/mark -repete o texto informado usando Markdown</code>
-<code>/html -repete o texto informado usando HTML</code>
-<code>/request -faz uma requisicao a um site</code>
-<code>/rt -repete concordando com o usuario na reposta  </code>
-<code>/fala -Repete o texto que voce pedir para ele falar</code>
-<code>/print -gera um print doque falou</code>
-<code>/dogbin - envia seu material em texto para o dogbin</code>
-<code>/hastebin - envia seu material em texto para o hastebin</code>
-<code>/echo - Repete o texto informado</code>
-<code>/shorten - Encurta uma URL.</code>
-<code>/recog - reconhecimento com IA (nem sempre disponivel devido uso de GPU)</code>
-<code>/notepad - cria um site com o texto enviado</code>
-<code>/crawler - pega todos links dentro de um site</code>
-<code>/corrigir - corrige palavras erradas</code>
-<code>/token - Exibe informaces de um token de um outro bot</code>
-
-<h2>Comandos para usuários:</h2>
-<code>/start   -inicia o bot</code>
-<code>/regras  -leia nossas regras</code>
-<code>/admin   -admins do grupo</code>
-<code>/freepkg -loja gratuita PS3 </code>
-<code>/fix -fix han</code>
-<code>/tutorial -como instalar a loja</code>
-<code>/rap -licenças dos jogos  </code>
-<code>/desbloqueio -desbloquear PS3</code>
-<code>/segundoplano -download </code>
-<code>/codigoerro  -codigos PSN/PS3</code>
-<code>/listajogos -download direto</code>
-<code>/doadores -instruções</code>
-<code>/mercadopago -doar/loja </code>
-<code>/tcxs -informações sobre </code>
-<code>/tcxspyject -criar lojas</code>
-<code>/ps1 -cria xml para loja</code>
-<code>/ps2 -cria xml para loja </code>
-<code>/psp -cria xml para loja</code>
-<code>/ps3 -cria xml para loja</code>
-<code>/proxy -velocidade no PS3</code>
-<code>/tr      -traduz um texto</code>
-<code>/yt      -pesquisa videos no YouTube</code>
-<code>/r       -pesquisa um termo no redit</code>
-<code>/clima   -exibe informacoes de clima</code>
-<code>/coub    -pesquisa de pequenas animacoes</code>
-<code>/dados   -jogo de dados</code>
-<code>/gif     -gif do giphy</code>
-<code>/git     -usuario do github</code>
-<code>/id      -id do usuario</code>
-<code>/ip      -informa dados de um ip</code>
-<code>/jsondump -retorna dados formatados</code>
-<code>/stickerid -pega id de um sticker</code>
-<code>/getsticker -baixa um sticker</code>
-<code>/pypi -pesquisa libs python</code>
-<code>/rextester -interpretador de varias linguagens de programação</code>
-<code>/mark -repete o texto informado usando Markdown</code>
-<code>/html -repete o texto informado usando HTML</code>
-<code>/request -faz uma requisicao a um site</code>
-<code>/rt -repete concordando com o usuario na reposta</code>  
-<code>/fala -Repete o texto que voce pedir para ele falar</code>
-<code>/print -gera um print doque falou</code>
-<code>/dogbin - envia seu material em texto para o dogbin</code>
-<code>/hastebin - envia seu material em texto para o hastebin</code>
-<code>/echo - Repete o texto informado.</code>    
-<code>/shorten - Encurta uma URL.</code>
-<code>/recog - reconhecimento com IA (nem sempre disponivel)</code>
-<code>/notepad - cria um site com o texto enviado</code>
-<code>/crawler - pega todos links dentro de um site</code>
-<code>/corrigir - corrige palavras erradas</code>
-<code>/token - Exibe informaces de um token de bot.</code><br>
-<br>
 <img src="https://raw.githubusercontent.com/gorpo/Bases-python/master/images/banner_manicom_terminal.jpg" width="100%"></img><br>
 <h2>Caso queira automatizar seu upload para o heroku use o arquivo bat da source ou basta criar um arquivo .bat com o código abaixo:</h2>
 <code>call heroku login</code><br>
