@@ -50,13 +50,14 @@ async def cria_site_telegraph(msg):
                     time.sleep(3)
 
             if 'photo' in msg.get('reply_to_message') and 'web' in texto.split()[0]:
+                print('aqui')
                 titulo = texto.split()[1]
                 separador = ' \n'
                 conte = texto.split()[2:]
                 conteudo = separador.join(map(str, conte))
                 id_foto = msg.get('reply_to_message')['photo'][0]['file_id']
                 await bot.download_file(id_foto, 'arquivos/criar_site.jpg')
-                token_imgur = keys['token_dropbox']
+                token_imgur = keys['token_imgur']
                 im = pyimgur.Imgur(token_imgur)
                 uploaded_image = im.upload_image('arquivos/criar_site.jpg', title=titulo)
                 link_imagem = uploaded_image.link
@@ -74,7 +75,17 @@ async def cria_site_telegraph(msg):
                 conexao_sqlite.close()
     except Exception as e:
         pass
-
+    try:
+        if msg['text'].split()[0] ==  '/notepad':
+                conteudo_html = msg['text'][8:]
+                telegraph = Telegraph()
+                a = telegraph.create_account(short_name='manicomio')
+                response = telegraph.create_page('Manicomio', html_content=conteudo_html)
+                link_final = 'https://telegra.ph/{}'.format(response['path'])
+                print(f"Usuário criou um site no telegra.ph: {link_final}")
+                await bot.sendMessage(msg['chat']['id'],f"🤖 {msg['from']['first_name']} acabei seu site:{link_final}", reply_to_message_id=msg['message_id'])
+    except Exception as e:
+        pass
 
 
 

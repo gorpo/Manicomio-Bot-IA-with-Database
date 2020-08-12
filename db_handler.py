@@ -43,6 +43,9 @@ try:
     cursor.execute("""  CREATE TABLE IF NOT EXISTS perguntas  (int_id integer not null primary key autoincrement, usuario varchar(5000), pergunta varchar(5000));  """)
     #tabela de frequencia para dizer quanto o bot pode falar
     cursor.execute("""  CREATE TABLE IF NOT EXISTS frequencia  (id_grupo INTEGER, grupo varchar(5000), valor int);  """)#chat_id INTEGER,
+    #tabela com os tokens e ids necessarias para iniciar o bot
+    cursor.execute(""" CREATE TABLE IF NOT EXISTS tokens_bot (int_id integer not null primary key autoincrement,token_bot varchar(5000),id_canal varchar(5000), id_pessoal varchar(5000),id_backups varchar(500), token_dropbox varchar(500),token_giphy varchar(5000), token_weather varchar(5000),token_imgur varchar(5000), token_yandex varchar(500), token_bitly varchar(500), id_google varchar(500), key_google varchar(500));  """)
+
     # seta a frequencia com 1 para o bot sempre falar pouco quando iniciado
     #cursor.execute(f"""INSERT INTO frequencia(valor)VALUES('0')""")
     #tabela das palavras que podem ser definidas como proibidas no grupo

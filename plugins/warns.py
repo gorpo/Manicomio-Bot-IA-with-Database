@@ -19,10 +19,8 @@ from amanobot.exception import TelegramError
 import time
 from config import bot, sudoers, logs, bot_username
 from utils import send_to_dogbin, send_to_hastebin
-
-
 from db_handler import cursor, conn
-from .admins import is_admin
+from plugins.admins import is_admin
 
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS user_warns (

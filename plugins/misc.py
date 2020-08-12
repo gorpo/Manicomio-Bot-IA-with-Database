@@ -24,7 +24,6 @@ async def misc(msg):
     if msg.get('text'):
         #repete as coisas com echo
         if msg['text'].startswith('fala') or msg['text'].startswith('/echo')or msg['text'].startswith('echo') or msg['text'] == '/echo@' + bot_username:
-            
             if msg.get('reply_to_message'):
                 reply_id = msg['reply_to_message']['message_id']
             else:
@@ -34,7 +33,6 @@ async def misc(msg):
             return True
         #owna nasa ele responde nasa pra caralho kkjj
         elif msg['text'].startswith('owna'):
-            
             if msg.get('reply_to_message'):
                 reply_id = msg['reply_to_message']['message_id']
             else:
@@ -180,15 +178,6 @@ ID: {bot_id}''',
                                   'html', reply_to_message_id=msg['message_id'])
             return True
 
-
-        elif msg['text'].lower() == 'suco':
-            if msg['from']['id'] in sudoers:
-                is_sudo = 'é gostozinho'
-            else:
-                is_sudo = 'tem gosto de bosta'
-            await bot.sendMessage(msg['chat']['id'], is_sudo + '?',
-                                  reply_to_message_id=msg['message_id'])
-            return True
 
         
         elif msg['text'].lower() == 'rt' and msg.get('reply_to_message'):

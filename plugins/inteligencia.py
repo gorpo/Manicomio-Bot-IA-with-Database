@@ -22,15 +22,6 @@ from datetime import datetime
 from plugins.admins import is_admin
 from plugins.inteligencias.ia_global import ia_global
 from plugins.inteligencias.ia_local import ia_local
-from plugins.inteligencias.ia_cadastro_perguntas import ia_cadastro_perguntas
-from plugins.inteligencias.ia_cadastro_manual import ia_cadastro_manual
-from plugins.inteligencias.ia_mensagens_proibidas import ia_mensagens_proibidas
-from plugins.inteligencias.ia_wikipedia import ia_wikipedia
-from plugins.inteligencias.ia_privado_bot import ia_privado_bot
-from plugins.inteligencias.ia_crawler_sites import crawling
-from plugins.inteligencias.ia_reconhecimento import ia_reconhecimento
-from plugins.inteligencias.ia_corrige_palavras import ia_corrige_palavras
-from plugins.inteligencias.ia_deepnude import ia_deepnude
 
 
 
@@ -40,9 +31,7 @@ async def inteligencia(msg):
         adm = await is_admin(msg['chat']['id'], msg['from']['id'], id_usuario)
     except Exception as e:
         pass
-    try:#ativa a inteligencia no privado do bot
-        if msg['chat']['type'] == 'private':
-            privado_bot = await ia_privado_bot()
+    try:
         if msg['chat']['type'] == 'supergroup':
             try:
                 grupo = f"https://t.me/{msg['chat']['username']}"
@@ -69,17 +58,6 @@ async def inteligencia(msg):
         #inicio da inteligencia artificial---------------------------------------->
         if chat_type == 'supergroup':  # se o chat for supergrupo ele manda mensagem
             if msg.get('text'):
-                #PLUGINS EXTERNOS DA INTELIGENCIA ARTIFICIAL | PASTA INTELIGENCIAS
-                ativa_cadastro_perguntas = await ia_cadastro_perguntas(msg)
-                ativa_cadastro_manual = await ia_cadastro_manual(msg)
-                ativa_mensagens_proibidas = await ia_mensagens_proibidas(msg)
-                ativa_wikipedia = await ia_wikipedia(msg)
-                ativa_crawling = await crawling(msg)
-                ativa_reconhecimento = await ia_reconhecimento(msg)
-                ativa_correcao = await ia_corrige_palavras(msg)
-                ativa_deepnude = await ia_deepnude(msg)
-
-
                 #inicia o banco de dados geral para captar o tipo de inteligencia------->
                 cursor_sqlite.execute("""SELECT * FROM inteligencia; """)
                 inteligencias = cursor_sqlite.fetchall()

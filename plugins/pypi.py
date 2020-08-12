@@ -21,7 +21,6 @@ from config import bot, sudoers, logs, bot_username, version
 from utils import send_to_dogbin, send_to_hastebin
 import html
 import re
-
 from amanobot.namedtuple import InlineKeyboardMarkup
 
 
